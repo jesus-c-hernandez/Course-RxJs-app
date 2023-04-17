@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{ course.description }}</h2>
+
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <input
+      matInput
+      placeholder="Course Description"
+      formControlName="description"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-select placeholder="Select category" formControlName="category">
+      <mat-option value="BEGINNER"> Beginner </mat-option>
+      <mat-option value="INTERMEDIATE"> Intermediate </mat-option>
+      <mat-option value="ADVANCED"> Advanced </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      matInput
+      placeholder="Select category"
+      formControlName="longDescription"
+    ></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="close()">Close</button>
+
+  <button mat-raised-button color="primary" #saveButton (click)="save()">
+    Save
+  </button>
+</div>
