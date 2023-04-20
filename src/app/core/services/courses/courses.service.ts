@@ -10,12 +10,9 @@ import { environment } from 'src/environments/environment';
 export class CoursesService {
   private http = inject(HttpClient);
 
-  getAllCourses(): Observable<Course[]> {
+  saveCourse(courseId: string, changes: Partial<Course>): Observable<any> {
     return this.http
-      .get<ResponseApiCourses>(`${environment.API_URL}courses`)
-      .pipe(
-        map((resp: ResponseApiCourses) => resp.payload),
-        shareReplay()
-      );
+      .put(`${environment.API_URL}courses/${courseId}`, changes)
+      .pipe(shareReplay());
   }
 }

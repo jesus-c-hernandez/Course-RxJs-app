@@ -15,7 +15,7 @@ import {
   MatDialogActions,
   MatDialogModule,
 } from '@angular/material/dialog';
-import { Course } from 'src/app/core';
+import { Course, CoursesService, StoreService } from 'src/app/core';
 
 @Component({
   standalone: true,
@@ -39,7 +39,8 @@ export class CourseDialogComponent {
   constructor(
     fb: FormBuilder,
     private dialogRef: MatDialogRef<CourseDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) course: Course
+    @Inject(MAT_DIALOG_DATA) course: Course,
+    private storeService: StoreService
   ) {
     this.course = course;
 
@@ -51,13 +52,11 @@ export class CourseDialogComponent {
   }
 
   save() {
-    console.log('SAVE');
-
     const changes = this.form.value;
 
     this.dialogRef.close(changes);
 
-    // this.coursesStore.saveCourse(this.course.id, changes).subscribe();
+    this.storeService.saveCourse(this.course.id, changes).subscribe();
   }
 
   close() {

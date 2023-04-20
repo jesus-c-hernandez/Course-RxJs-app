@@ -14,7 +14,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
 // * Modules
-import { HomeModule } from './modules/home/home.module';
+import { HomeModule } from './modules';
+
+import { LoadingGeneralComponent, LoadingGeneralService } from './standalone';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +25,7 @@ import { HomeModule } from './modules/home/home.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    LoadingGeneralComponent,
 
     // * Material
     MatToolbarModule,
@@ -34,7 +37,7 @@ import { HomeModule } from './modules/home/home.module';
     // * Modules
     HomeModule,
   ],
-  providers: [],
+  providers: [LoadingGeneralService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
