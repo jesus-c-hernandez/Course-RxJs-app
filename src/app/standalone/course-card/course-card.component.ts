@@ -11,6 +11,7 @@ import {
 import { CourseDialogComponent } from '../course-dialog';
 
 import { Course } from 'src/app/core';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -24,9 +25,13 @@ export class CourseCardComponent {
   course: Course;
 
   private dialog = inject(MatDialog);
+  private router = inject(Router);
+
+  viewDetailCourse({ id }: Course) {
+    this.router.navigate(['/courses', id]);
+  }
 
   editCourse(course: Course) {
-    console.log('EDIT');
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
