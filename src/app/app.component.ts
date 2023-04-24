@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthStore } from './core';
 
 @Component({
   selector: 'app-root',
@@ -6,11 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'reactive-angular-course-app';
+  title = 'reactive-angular-app';
+
+  public auth = inject(AuthStore);
 
   showFiller = false;
 
   logout() {
-    // this.auth.logout();
+    this.auth.logout();
   }
 }

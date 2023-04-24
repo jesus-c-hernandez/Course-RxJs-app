@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// * Components [Routes]
 import { HomeComponent } from './modules/home/home.component';
 import { CourseComponent } from './modules/course';
 import { SearchLessonsComponent } from './modules/search-lessons';
-// import { AboutComponent } from './about/about.component'
-// import { LoginComponent } from './login/login.component'
+import { AboutComponent } from './modules/about';
+import { LoginComponent } from './modules/login';
 
 const routes: Routes = [
   {
@@ -15,18 +17,18 @@ const routes: Routes = [
     path: 'search-lessons',
     component: SearchLessonsComponent,
   },
-  // {
-  //   path: 'about',
-  //   // component: AboutComponent,
-  // },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
   {
     path: 'courses/:courseId',
     component: CourseComponent,
   },
-  // {
-  //   path: 'login',
-  //   // component: LoginComponent,
-  // },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
   {
     path: '**',
     redirectTo: '/',

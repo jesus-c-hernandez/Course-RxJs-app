@@ -1,0 +1,30 @@
+mat-card-title {
+  margin: 1rem;
+}
+
+.login-page {
+  max-width: 350px;
+  margin: 50px auto 0 auto;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-data {
+  margin: 5px auto 0 auto;
+}
+
+.user-data .title {
+  margin: 0.5rem 2rem;
+}
+
+.user-data .data {
+  margin: 0.4rem 1rem;
+}
+
+.user-data .example {
+  font-size: 0.9rem;
+  margin: 1rem 0.8rem;
+}

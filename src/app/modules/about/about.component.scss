@@ -1,0 +1,17 @@
+.course-image {
+  max-width: 300px;
+  border-radius: 4px;
+}
+
+.about {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin: 1rem 8rem;
+}
