@@ -1,15 +1,10 @@
 .card {
-  cursor: pointer;
   margin: 1rem;
   max-width: 400px;
-  transition: 0.5s;
-}
-
-.card:hover {
-  transform: scale(1.03);
 }
 
 .card-actions {
   display: flex;
   justify-content: flex-end;
+  gap: 4px;
 }

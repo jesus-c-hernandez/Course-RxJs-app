@@ -13,5 +13,26 @@
 
 .about p {
   font-size: 1.2rem;
-  margin: 1rem 8rem;
+  margin: 1rem 28rem;
+}
+
+@media (max-width: 1240px) {
+  .about p {
+    font-size: 1.2rem;
+    margin: 1rem 18rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .about p {
+    font-size: 1.2rem;
+    margin: 1rem 6rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .about p {
+    font-size: 1.2rem;
+    margin: 1rem 2rem;
+  }
 }
