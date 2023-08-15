@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, combineLatest, map, startWith, tap } from 'rxjs';
 import { Course, CoursesService, Lesson } from 'src/app/core';
-import { LoadingGeneralService } from 'src/app/standalone';
+import { LoadingService } from 'src/app/standalone';
 
 interface CourseData {
   course: Course;
@@ -20,7 +20,7 @@ export class CourseComponent {
   constructor(
     private route: ActivatedRoute,
     private coursesService: CoursesService,
-    private loadingGService: LoadingGeneralService
+    private loadingService: LoadingService
   ) {}
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class CourseComponent {
       tap(console.log)
     );
 
-    this.loadingGService.showLoaderUntilComplete(this.data$).subscribe();
+    this.loadingService.showLoaderUntilComplete(this.data$).subscribe();
   }
 
   getCourseId() {

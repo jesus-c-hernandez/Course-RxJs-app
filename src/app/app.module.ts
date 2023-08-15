@@ -16,7 +16,12 @@ import { MatIconModule } from '@angular/material/icon';
 // * Modules
 import { HomeModule } from './modules';
 
-import { LoadingGeneralComponent, LoadingGeneralService } from './standalone';
+import {
+  LoadingComponent,
+  LoadingGeneralComponent,
+  LoadingGeneralService,
+  LoadingService,
+} from './standalone';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +31,7 @@ import { LoadingGeneralComponent, LoadingGeneralService } from './standalone';
     BrowserAnimationsModule,
     HttpClientModule,
     LoadingGeneralComponent,
+    LoadingComponent,
 
     // * Material
     MatToolbarModule,
@@ -37,7 +43,7 @@ import { LoadingGeneralComponent, LoadingGeneralService } from './standalone';
     // * Modules
     HomeModule,
   ],
-  providers: [LoadingGeneralService],
+  providers: [LoadingGeneralService, LoadingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

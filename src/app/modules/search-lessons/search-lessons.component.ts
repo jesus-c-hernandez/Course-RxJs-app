@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CoursesService, Lesson } from 'src/app/core';
-import { LoadingGeneralService } from 'src/app/standalone';
+import { LoadingService } from 'src/app/standalone';
 
 @Component({
   selector: 'app-search-lessons',
@@ -15,12 +15,12 @@ export class SearchLessonsComponent {
   isActiveLesson: boolean = false;
 
   private coursesService = inject(CoursesService);
-  private loadingGService = inject(LoadingGeneralService);
+  private loadingService = inject(LoadingService);
 
   onSearch(search: string) {
     this.searchResults$ = this.coursesService.searchLessons(search);
 
-    this.loadingGService
+    this.loadingService
       .showLoaderUntilComplete(this.searchResults$)
       .subscribe();
   }
