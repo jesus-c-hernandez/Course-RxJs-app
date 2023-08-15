@@ -12,5 +12,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, MatProgressSpinnerModule],
 })
 export class LoadingGeneralComponent {
-  constructor(public loadingGService: LoadingGeneralService) {}
+  waitTime: number = 30;
+
+  constructor(public loadingGService: LoadingGeneralService) {
+    setTimeout(() => {
+      this.waitTime = this.waitTime - 1;
+    }, 1000);
+  }
 }
